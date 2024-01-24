@@ -31,7 +31,7 @@ public class PathfindingAgent : MonoBehaviour
 
 #region Late/Update
     //Function Calls
-    void Update()
+    protected void Update()
     {
         LookAtTarget(target.transform.position);
         SetNavAgentTarget(target.transform.position);
@@ -53,5 +53,13 @@ public class PathfindingAgent : MonoBehaviour
         agent.SetDestination(targetVector);
     }
 
+    protected bool isTargetCloserThen(float targetDistance)
+    {
+        if (agent.remainingDistance <= targetDistance)
+        {
+            return true;
+        }
+        return false;
+    }
 #endregion
 }
