@@ -7,9 +7,10 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject PlayerRef;
-    List<GameObject> EnemyTypeOne = new List<GameObject>();
-    List<GameObject> EnemyTypeTwo = new List<GameObject>();
-    List<GameObject> EnemyTypeThree = new List<GameObject>();
+    [SerializeField]
+    public List<GameObject> EnemyTypeOne = new List<GameObject>();
+    public List<GameObject> EnemyTypeTwo = new List<GameObject>();
+    public List<GameObject> EnemyTypeThree = new List<GameObject>();
     public GameObject Enemy;
     public GameObject EnemyTwo;
     public GameObject EnemyThree;
@@ -20,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     public int EnemyOneMultiplier;
     public int EnemyTwoMultiplier;
     public int EnemyThreeMultiplier;
-    private int Round;
+    public int Round;
     public int MaxRounds;
 
     public bool ShouldSpawnEnemies;
@@ -35,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void Update()
     {
+        StartNextRound();
         if (Round < 4)
         {
             switch (Round)
@@ -147,10 +149,10 @@ public class WaveSpawner : MonoBehaviour
     protected void SpawnEnemies(int i, List <GameObject> ListOfEnemies)
     {
     
-            Instantiate(ListOfEnemies[i], this.GetComponent<Transform>().position, this.GetComponent<Transform>().rotation);
-
+            Instantiate(ListOfEnemies[i], this.GetComponent<Transform>().position, this.GetComponent<Transform>().rotation,this.transform);
+     //
         ListOfEnemies[i].GetComponent<Transform>().LookAt(PlayerRef.GetComponent<Transform>());
-        ListOfEnemies[i].GetComponent<Rigidbody>().AddForce(ListOfEnemies[i].GetComponent<Transform>().forward*2);
+       ListOfEnemies[i].GetComponent<Rigidbody>().AddForce(ListOfEnemies[i].GetComponent<Transform>().forward*2);
         
     }
 
@@ -159,21 +161,21 @@ public class WaveSpawner : MonoBehaviour
 
         Destroy(enemyType.gameObject);
 
-        if (enemyType.tag == "Enemy") { 
-                EnemyTypeOne.Remove(enemyType);
+        if (enemyType.gameObject.CompareTag("Enemy")) {
+            EnemyTypeOne.RemoveAt(EnemyTypeOne.Count-1);
         
         }
         else if (enemyType.tag == "EnemyTwo") {
         
-        EnemyTypeTwo.Remove(enemyType); 
-        
+        EnemyTypeTwo.RemoveAt(EnemyTypeTwo.Count - 1);
+
         }
         else if (enemyType.tag == "EnemyThree")
         {
-            EnemyTypeThree.Remove(enemyType);
+            EnemyTypeThree.RemoveAt(EnemyTypeThree.Count - 1);
         }
 
-        StartNextRound();
+       
     }
 
     void StartNextRound()
