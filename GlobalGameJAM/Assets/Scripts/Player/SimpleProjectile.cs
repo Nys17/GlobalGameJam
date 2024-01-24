@@ -32,6 +32,7 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, this.transform.position);
         if (other.gameObject.CompareTag("enemy"))
         {
             Destroy(gameObject);
