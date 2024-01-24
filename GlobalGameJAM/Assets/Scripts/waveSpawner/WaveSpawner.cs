@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public int Round;
     public GameObject PlayerRef;
     [SerializeField]
     public List<GameObject> EnemyTypeOne = new List<GameObject>();
@@ -21,7 +22,7 @@ public class WaveSpawner : MonoBehaviour
     public int EnemyOneMultiplier;
     public int EnemyTwoMultiplier;
     public int EnemyThreeMultiplier;
-    public int Round;
+   
     public int MaxRounds;
 
     public bool ShouldSpawnEnemies;
@@ -187,7 +188,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                    if(Round <= MaxRounds)
                     {
-                        Round = +1;
+                        Round = 2;
                         ShouldSpawnEnemies = true;
                     }
                     
@@ -198,7 +199,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     if (Round <= MaxRounds)
                     {
-                        Round = +1;
+                        Round = 3;
                         ShouldSpawnEnemies = true;
                     }
                 }
@@ -208,7 +209,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     if (Round <= MaxRounds)
                     {
-                        Round = +1;
+                        Round = 4;
                         ShouldSpawnEnemies = true;
                     }
                 }
@@ -218,7 +219,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     if (Round <= MaxRounds)
                     {
-                        Round = +1;
+                        Round = Round +1;
                         FillEnemyArrays();
                         ShouldSpawnEnemies = true;
                     }

@@ -369,8 +369,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1176781916}
   - component: {fileID: 1176781919}
-  - component: {fileID: 1176781918}
   - component: {fileID: 1176781917}
+  - component: {fileID: 1176781920}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -407,14 +407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sensitivity: 250
   playerBody: {fileID: 1168935205}
---- !u!81 &1176781918
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176781915}
-  m_Enabled: 1
 --- !u!20 &1176781919
 Camera:
   m_ObjectHideFlags: 0
@@ -466,6 +458,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1176781920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176781915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1511884607
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +503,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79ddc8adafeb1041bb70a5965720665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Round: 0
   PlayerRef: {fileID: 1168935201}
+  EnemyTypeOne: []
+  EnemyTypeTwo: []
+  EnemyTypeThree: []
   Enemy: {fileID: 7166514659704898047, guid: 563cbeacab09b544ea821f96ab3cdf04, type: 3}
   EnemyTwo: {fileID: 7166514659704898047, guid: 563cbeacab09b544ea821f96ab3cdf04, type: 3}
   EnemyThree: {fileID: 7166514659704898047, guid: 563cbeacab09b544ea821f96ab3cdf04, type: 3}
@@ -588,6 +597,84 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511884607}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71574545, y: -0.43673372, z: 3.830034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1914269943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914269946}
+  - component: {fileID: 1914269945}
+  - component: {fileID: 1914269944}
+  m_Layer: 0
+  m_Name: d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1914269944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914269943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78e8d69651d52b44a1e52b1a479d994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1914269945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914269943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4038d1b571109e47b3ae263f949dc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <music>k__BackingField:
+    Guid:
+      Data1: -653056555
+      Data2: 1294291903
+      Data3: -2146422106
+      Data4: 1086318949
+    Path: event:/Soundtrack
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: -331873360
+      Data2: 1095438776
+      Data3: -819559284
+      Data4: -217731312
+    Path: event:/Footsteps
+  <metalPipe>k__BackingField:
+    Guid:
+      Data1: 1720138381
+      Data2: 1334637744
+      Data3: 1790301351
+      Data4: 784603085
+    Path: event:/MetalPipe
+--- !u!4 &1914269946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914269943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.71574545, y: -0.43673372, z: 3.830034}
@@ -708,3 +795,4 @@ SceneRoots:
   - {fileID: 2068330143}
   - {fileID: 1168935205}
   - {fileID: 1511884612}
+  - {fileID: 1914269946}
