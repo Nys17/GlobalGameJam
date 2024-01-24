@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SimpleProjectile : MonoBehaviour
 {
-   
     public Rigidbody BulletRig;
     float lifespan = 10f;
     public float speed = 10000f;
@@ -33,9 +32,9 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("EnemyTwo") || other.gameObject.CompareTag("EnemyThree"))
+        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+        if (other.gameObject.CompareTag("enemy"))
         {
-            
             Destroy(gameObject);
         }
     }

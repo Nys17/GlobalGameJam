@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
+    float lifespan = 10f;
+    public float speed = 10000f;
+    public Rigidbody BulletRig;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        BulletRig.AddForce(transform.forward * speed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        lifespan = lifespan - (1f * Time.deltaTime);
+        if (lifespan <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player") )
+        {
+
+            Destroy(gameObject);
+        }
     }
 }
