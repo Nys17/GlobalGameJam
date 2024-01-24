@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public GameObject PlayerRef;
     List<GameObject> EnemyTypeOne = new List<GameObject>();
     List<GameObject> EnemyTypeTwo = new List<GameObject>();
     List<GameObject> EnemyTypeThree = new List<GameObject>();
@@ -148,8 +149,9 @@ public class WaveSpawner : MonoBehaviour
     {
     
             Instantiate(ListOfEnemies[i], this.GetComponent<Transform>().position, this.GetComponent<Transform>().rotation);
-           
-    
+
+        ListOfEnemies[i].GetComponent<Transform>().LookAt(PlayerRef.GetComponent<Transform>());
+        ListOfEnemies[i].GetComponent<Rigidbody>().AddForce(ListOfEnemies[i].GetComponent<Transform>().forward*2);
         
     }
 
