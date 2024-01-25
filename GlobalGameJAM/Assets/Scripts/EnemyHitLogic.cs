@@ -25,7 +25,7 @@ public class EnemyHitLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waveSpawner = GetComponent<WaveSpawner>();
+        waveSpawner = GetComponentInParent<WaveSpawner>();
         EnemyHealth = 100f;
         speed = 10;
         UpSpeed = 1000;
