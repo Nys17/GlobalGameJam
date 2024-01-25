@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimpleProjectile : MonoBehaviour
 {
     public Rigidbody BulletRig;
-    float lifespan = 10f;
+    float lifespan = 5f;
     public float speed = 10000f;
     // Start is called before the first frame update
     void Start()

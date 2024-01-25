@@ -75,6 +75,14 @@ public class Player : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
 
+        if (Input.GetKey(KeyCode.LeftShift)== true)
+        {
+            speed = 20f;
+        }
+        if (Input.GetKey(KeyCode.LeftShift) == false)
+        {
+            speed = 12f;
+        }
         controller.Move(velocity * Time.deltaTime);
 
         UpdateSound();
@@ -97,6 +105,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Boost"))
+        {
+            velocity.y = Mathf.Sqrt(boostHeight * -2f * gravity);
+            velocity.y += gravity * Time.deltaTime;
+        }
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy bullet"))
@@ -109,10 +125,6 @@ public class Player : MonoBehaviour
             PlayerHealth = PlayerHealth + 20;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("Boost"))
-        {
-            velocity.y = Mathf.Sqrt(boostHeight * -2f * gravity);
-            velocity.y += gravity * Time.deltaTime;
-        }
+        
     }
 }
