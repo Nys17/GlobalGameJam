@@ -6,12 +6,21 @@ using UnityEngine.ProBuilder;
 
 public class EnemyHitLogic : MonoBehaviour
 {
-    PathfindingAgent Agent;
+    [SerializeField] PathfindingAgent Agent;
     public float EnemyHealth;
     public Rigidbody This;
     public GameObject healthBall;
     int speed;
     int UpSpeed;
+
+    private void Awake()
+    {
+        if (!TryGetComponent<PathfindingAgent>(out Agent))
+        {
+            Debug.Log("No agent");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +44,7 @@ public class EnemyHitLogic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
-           // Agent.OnHit();
+            Agent.OnHit();
             This.AddForce(other.transform.forward * speed);
             This.AddForce(transform.up * UpSpeed);
             EnemyHealth = 0;

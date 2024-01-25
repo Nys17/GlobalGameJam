@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,9 +12,9 @@ public class PathfindingAgent : MonoBehaviour
     public GameObject target;
 
     private bool isGrounded;
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask groundMask;
 
     [SerializeField] private float pathfindingMaxTime = 0f;
     private float pathfindingTime = 0f;
@@ -36,6 +37,12 @@ public class PathfindingAgent : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player");
             Debug.Log("No target for: " + this.name);
         }
+/*
+        if (!TryGetComponent<Rigidbody>(out rb))
+        {
+            Debug.Log("No rigidbody");
+        }
+*/
     }
     #endregion
 
