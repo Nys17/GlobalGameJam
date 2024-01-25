@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class PathfindingAgent : MonoBehaviour
 {
 #region Variables
     public NavMeshAgent agent;
     public GameObject target;
+
+    private bool isGrounded;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+    [SerializeField] private float pathfindingMaxTime = 0f;
+    private float pathfindingTime = 0f;
     #endregion
 
 #region Initialisation
@@ -24,6 +33,7 @@ public class PathfindingAgent : MonoBehaviour
 
         if (target == null)
         {
+            target = GameObject.FindGameObjectWithTag("Player");
             Debug.Log("No target for: " + this.name);
         }
     }
@@ -61,5 +71,26 @@ public class PathfindingAgent : MonoBehaviour
         }
         return false;
     }
+
+    public void OnHit()
+    {
+
+    }
+
+    private void PathfindingTimer()
+    {
+        pathfindingTime += Time.deltaTime;
+        if (pathfindingTime >= pathfindingMaxTime && isGrounded)
+        {
+
+        }
+    }
+
+    private bool GroundCheck()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        return isGrounded;
+    }
+
 #endregion
 }

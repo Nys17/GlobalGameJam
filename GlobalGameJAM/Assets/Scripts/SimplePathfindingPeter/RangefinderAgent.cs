@@ -6,7 +6,7 @@ public class RangefinderAgent : PathfindingAgent
 {
     #region Variables
 
-    [SerializeField] float targetDistance;
+    [SerializeField] public float targetDistance;
 
     #endregion
 
@@ -17,13 +17,16 @@ public class RangefinderAgent : PathfindingAgent
         MeasureDistanceToTarget();
     }
     #endregion
+
     #region Custom Methods
-    public void MeasureDistanceToTarget()
+    public bool MeasureDistanceToTarget()
     {
         if (isTargetCloserThen(targetDistance))
         {
             ExecuteDistanceMethod();
+            return true;
         }
+        return false;
     }
 
     protected virtual void ExecuteDistanceMethod()
