@@ -6,15 +6,26 @@ using UnityEngine.ProBuilder;
 
 public class EnemyHitLogic : MonoBehaviour
 {
-    PathfindingAgent Agent;
+    [SerializeField] PathfindingAgent Agent;
+    public WaveSpawner waveSpawner;      
     public float EnemyHealth;
     public Rigidbody This;
     public GameObject healthBall;
     int speed;
     int UpSpeed;
+
+    private void Awake()
+    {
+        if (!TryGetComponent<PathfindingAgent>(out Agent))
+        {
+            Debug.Log("No agent");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        waveSpawner = GetComponentInParent<WaveSpawner>();
         EnemyHealth = 100f;
         speed = 10;
         UpSpeed = 1000;
@@ -28,14 +39,15 @@ public class EnemyHitLogic : MonoBehaviour
         {
             GameObject Health = Instantiate(healthBall);
             Health.transform.position = gameObject.transform.position;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            waveSpawner.DestroyEnemy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
-           // Agent.OnHit();
+            Agent.OnHit();
             This.AddForce(other.transform.forward * speed);
             This.AddForce(transform.up * UpSpeed);
             EnemyHealth = 0;
