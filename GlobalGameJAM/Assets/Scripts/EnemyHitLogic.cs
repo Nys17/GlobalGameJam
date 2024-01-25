@@ -15,6 +15,7 @@ public class EnemyHitLogic : MonoBehaviour
         EnemyHealth = 100f;
         speed = 10;
         UpSpeed = 1000;
+        This = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
