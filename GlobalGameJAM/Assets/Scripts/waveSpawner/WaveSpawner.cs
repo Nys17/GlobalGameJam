@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
         Round = 1; /// set round
        FillEnemyArrays();
         ShouldSpawnEnemies = true;
-
+        PlayerRef = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
@@ -160,9 +160,9 @@ public class WaveSpawner : MonoBehaviour
     public void DestroyEnemy(GameObject enemyType)
     {
 
-        Destroy(enemyType.gameObject);
+        Destroy(enemyType);
 
-        if (enemyType.gameObject.CompareTag("Enemy")) {
+        if (enemyType.tag == "Enemy") {
             EnemyTypeOne.RemoveAt(EnemyTypeOne.Count-1);
         
         }
