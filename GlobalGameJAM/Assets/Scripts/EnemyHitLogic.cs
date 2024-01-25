@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class EnemyHitLogic : MonoBehaviour
 {
+    PathfindingAgent Agent;
     public float EnemyHealth;
     public Rigidbody This;
+    public GameObject healthBall;
     int speed;
     int UpSpeed;
     // Start is called before the first frame update
@@ -21,14 +24,21 @@ public class EnemyHitLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (EnemyHealth <= 0) 
+        {
+            GameObject Health = Instantiate(healthBall);
+            Health.transform.position = gameObject.transform.position;
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
+           // Agent.OnHit();
             This.AddForce(other.transform.forward * speed);
             This.AddForce(transform.up * UpSpeed);
+            EnemyHealth = 0;
         }
     }
 }
