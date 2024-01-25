@@ -32,8 +32,13 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        BulletRig.AddForce(transform.forward * speed);
+        if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyTwo") || other.gameObject.CompareTag("EnemyThree")))
+        {
+            BulletRig.AddForce(transform.forward * speed);
+        }
+        
         AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+        
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyTwo")|| other.gameObject.CompareTag("EnemyThree"))
         {
             Destroy(gameObject);

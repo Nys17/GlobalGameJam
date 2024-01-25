@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof((NavMeshAgent, Rigidbody)))]
 public class PathfindingAgent : MonoBehaviour
 {
 #region Variables
@@ -16,8 +16,10 @@ public class PathfindingAgent : MonoBehaviour
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
 
+    private Rigidbody rb;
+
     [SerializeField] private float pathfindingMaxTime = 0f;
-    private float pathfindingTime = 0f;
+    [SerializeField] private float pathfindingTime = 0f;
     #endregion
 
 #region Initialisation
@@ -37,12 +39,12 @@ public class PathfindingAgent : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player");
             Debug.Log("No target for: " + this.name);
         }
-/*
+
         if (!TryGetComponent<Rigidbody>(out rb))
         {
             Debug.Log("No rigidbody");
         }
-*/
+
     }
     #endregion
 
@@ -50,8 +52,11 @@ public class PathfindingAgent : MonoBehaviour
     //Function Calls
     protected void Update()
     {
-        LookAtTarget(target.transform.position);
-        SetNavAgentTarget(target.transform.position);
+        if (agent.updatePosition)
+        {
+            LookAtTarget(target.transform.position);
+            SetNavAgentTarget(target.transform.position);
+        }
         PathfindingTimer();
     }
     #endregion
@@ -88,16 +93,27 @@ public class PathfindingAgent : MonoBehaviour
     private void PathfindingTimer()
     {
         pathfindingTime += Time.deltaTime;
-        if (pathfindingTime >= pathfindingMaxTime && GroundCheck() == true)
+        if (GroundCheck() == true && pathfindingTime >= pathfindingMaxTime)
         {
+            agent.nextPosition = this.transform.position;
             agent.updatePosition = true;
+            pathfindingTime = 0;
+            rb.velocity = Vector3.zero;
+        }
+        else if (agent.updatePosition == true)
+        {
+            pathfindingTime = 0;
         }
     }
 
     private bool GroundCheck()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        return isGrounded;
+        if (agent.updatePosition == false)
+        {
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            return isGrounded;
+        }
+        return true;
     }
 
 #endregion
