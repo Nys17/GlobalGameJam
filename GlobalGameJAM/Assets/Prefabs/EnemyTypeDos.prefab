@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 2876444661887160541}
   m_Layer: 0
   m_Name: EnemyTypeDos
-  m_TagString: Enemy
+  m_TagString: EnemyTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2692873630655968787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  pathfindingMaxTime: 3
+  pathfindingMaxTime: 1
+  pathfindingTime: 0
   targetDistance: 0
 --- !u!114 &5790006002712634071
 MonoBehaviour:

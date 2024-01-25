@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166514659704898047}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.004870617, y: 0.9428843, z: -0.013799413, w: 0.33279884}
+  m_LocalRotation: {x: 0.003184672, y: -0.70040834, z: 0.0031252378, w: 0.7137284}
   m_LocalPosition: {x: 0, y: 1.3120003, z: 3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -171,7 +171,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4577837009148933127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +205,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  pathfindingMaxTime: 3
+  pathfindingMaxTime: 1
+  pathfindingTime: 0
   targetDistance: 0
 --- !u!195 &7376359205661230611
 NavMeshAgent:

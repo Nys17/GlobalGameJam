@@ -37,11 +37,12 @@ public class SimpleProjectile : MonoBehaviour
             BulletRig.AddForce(transform.forward * speed);
         }
         
-        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+        
         
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyTwo")|| other.gameObject.CompareTag("EnemyThree"))
         {
             Destroy(gameObject);
         }
+        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
     }
 }
