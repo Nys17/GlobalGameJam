@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight = 10f;
+    public float boostHeight = 20f;
     public int PlayerHealth = 100;
     
     
@@ -107,6 +108,11 @@ public class Player : MonoBehaviour
         {
             PlayerHealth = PlayerHealth + 20;
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Boost"))
+        {
+            velocity.y = Mathf.Sqrt(boostHeight * -2f * gravity);
+            velocity.y += gravity * Time.deltaTime;
         }
     }
 }
