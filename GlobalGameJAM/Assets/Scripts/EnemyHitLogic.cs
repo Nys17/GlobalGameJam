@@ -7,6 +7,7 @@ using UnityEngine.ProBuilder;
 public class EnemyHitLogic : MonoBehaviour
 {
     [SerializeField] PathfindingAgent Agent;
+    public WaveSpawner waveSpawner;      
     public float EnemyHealth;
     public Rigidbody This;
     public GameObject healthBall;
@@ -24,6 +25,7 @@ public class EnemyHitLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waveSpawner = GetComponent<WaveSpawner>();
         EnemyHealth = 100f;
         speed = 10;
         UpSpeed = 1000;
@@ -37,7 +39,8 @@ public class EnemyHitLogic : MonoBehaviour
         {
             GameObject Health = Instantiate(healthBall);
             Health.transform.position = gameObject.transform.position;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            waveSpawner.DestroyEnemy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision other)
