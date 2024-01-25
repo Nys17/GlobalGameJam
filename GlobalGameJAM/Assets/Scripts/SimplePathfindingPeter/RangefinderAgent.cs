@@ -17,6 +17,7 @@ public class RangefinderAgent : PathfindingAgent
         MeasureDistanceToTarget();
     }
     #endregion
+
     #region Custom Methods
     public void MeasureDistanceToTarget()
     {

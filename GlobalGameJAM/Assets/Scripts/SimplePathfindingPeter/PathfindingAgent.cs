@@ -8,6 +8,9 @@ public class PathfindingAgent : MonoBehaviour
 #region Variables
     public NavMeshAgent agent;
     public GameObject target;
+
+    [SerializeField] private float pathfindingMaxTime = 0f;
+    private float pathfindingTime = 0f;
     #endregion
 
 #region Initialisation
@@ -24,6 +27,7 @@ public class PathfindingAgent : MonoBehaviour
 
         if (target == null)
         {
+            target = GameObject.FindGameObjectWithTag("Player");
             Debug.Log("No target for: " + this.name);
         }
     }
@@ -61,5 +65,16 @@ public class PathfindingAgent : MonoBehaviour
         }
         return false;
     }
+
+    public void OnHit()
+    {
+
+    }
+
+    private void PathfindingTimer()
+    {
+
+    }
+
 #endregion
 }
