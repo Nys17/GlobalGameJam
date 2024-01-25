@@ -6,15 +6,38 @@ public class FirstEnemy : MonoBehaviour
 {
    public WaveSpawner waveSpawner;
     public float damage;
+    RangefinderAgent rangefinderAgent;
+    float attackCoolDown;
+    bool canAttack;
     void Start()
     {
         waveSpawner = GetComponentInParent<WaveSpawner>();
+
+        attackCoolDown = 5f;
+        rangefinderAgent = this.GetComponent<RangefinderAgent>();
+        rangefinderAgent.targetDistance = 5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rangefinderAgent.MeasureDistanceToTarget()) { 
         
+            if (canAttack)
+            {
+                ChargedAttack();
+            }
+
+            attackCoolDown = attackCoolDown - (1f * Time.deltaTime); /// timer
+
+            if (attackCoolDown <= 0)
+            {
+                canAttack = true;
+                attackCoolDown = 5f;
+            }
+        
+        
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -29,6 +52,7 @@ public class FirstEnemy : MonoBehaviour
     void ChargedAttack()
     {
         this.GetComponent<Rigidbody>().AddForce(this.transform.forward * 20);
+        canAttack = false;
     }
 
     private void OnTriggerEnter(Collider other)
