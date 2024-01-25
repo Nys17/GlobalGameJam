@@ -23,7 +23,7 @@ public class RangefinderAgent : PathfindingAgent
     {
         if (isTargetCloserThen(targetDistance))
         {
-            ExecuteDistanceMethod();
+            //ExecuteDistanceMethod();
             return true;
         }
         return false;
