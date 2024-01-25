@@ -9,6 +9,7 @@ TagManager:
   - EnemyTwo
   - EnemyThree
   - Health
+  - Health Ball
   layers:
   - Default
   - TransparentFX
