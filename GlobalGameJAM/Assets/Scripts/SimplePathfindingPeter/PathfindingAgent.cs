@@ -81,7 +81,7 @@ public class PathfindingAgent : MonoBehaviour
     private void PathfindingTimer()
     {
         pathfindingTime += Time.deltaTime;
-        if (pathfindingTime >= pathfindingMaxTime && isGrounded)
+        if (pathfindingTime >= pathfindingMaxTime && GroundCheck())
         {
             agent.updatePosition = true;
         }
