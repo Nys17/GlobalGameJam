@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
         Round = 1; /// set round
        FillEnemyArrays();
         ShouldSpawnEnemies = true;
-
+        PlayerRef = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
