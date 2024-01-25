@@ -45,6 +45,7 @@ public class PathfindingAgent : MonoBehaviour
     {
         LookAtTarget(target.transform.position);
         SetNavAgentTarget(target.transform.position);
+        PathfindingTimer();
     }
     #endregion
 
@@ -74,7 +75,7 @@ public class PathfindingAgent : MonoBehaviour
 
     public void OnHit()
     {
-
+        agent.updatePosition = false;
     }
 
     private void PathfindingTimer()
@@ -82,7 +83,7 @@ public class PathfindingAgent : MonoBehaviour
         pathfindingTime += Time.deltaTime;
         if (pathfindingTime >= pathfindingMaxTime && isGrounded)
         {
-
+            agent.updatePosition = true;
         }
     }
 
