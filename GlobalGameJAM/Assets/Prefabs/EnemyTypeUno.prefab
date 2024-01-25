@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166514659704898047}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01044283, y: 0.75489235, z: -0.012023408, w: 0.65565544}
+  m_LocalRotation: {x: 0.004870617, y: 0.9428843, z: -0.013799413, w: 0.33279884}
   m_LocalPosition: {x: 0, y: 1.3120003, z: 3.2}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveSpawner: {fileID: 0}
+  damage: 0
 --- !u!114 &2692873630655968787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +168,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7376359205661230611}
   target: {fileID: 0}
+  groundCheck: {fileID: 0}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pathfindingMaxTime: 0
   targetDistance: 0
 --- !u!195 &7376359205661230611
 NavMeshAgent:
@@ -204,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 0
   This: {fileID: 0}
+  healthBall: {fileID: 0}
 --- !u!65 &2876444661887160541
 BoxCollider:
   m_ObjectHideFlags: 0

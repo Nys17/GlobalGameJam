@@ -16,6 +16,7 @@ public class FirstEnemy : MonoBehaviour
         attackCoolDown = 5f;
         rangefinderAgent = this.GetComponent<RangefinderAgent>();
         rangefinderAgent.targetDistance = 5f;
+        damage = 20;
     }
 
     // Update is called once per frame
@@ -40,14 +41,14 @@ public class FirstEnemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("PlayerBullet"))
-        {
-            waveSpawner.DestroyEnemy(gameObject);
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.CompareTag("PlayerBullet"))
+    //    {
+    //        waveSpawner.DestroyEnemy(gameObject);
             
-        }
-    }
+    //    }
+    //}
 
     void ChargedAttack()
     {
