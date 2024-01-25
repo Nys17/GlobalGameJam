@@ -21,7 +21,7 @@ public class RangefinderAgent : PathfindingAgent
     #region Custom Methods
     public bool MeasureDistanceToTarget()
     {
-        if (isTargetCloserThen(targetDistance))
+        if (IsTargetCloserThen(targetDistance))
         {
             //ExecuteDistanceMethod();
             return true;

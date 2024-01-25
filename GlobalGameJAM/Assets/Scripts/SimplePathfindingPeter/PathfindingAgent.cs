@@ -71,7 +71,7 @@ public class PathfindingAgent : MonoBehaviour
         agent.SetDestination(targetVector);
     }
 
-    protected bool isTargetCloserThen(float targetDistance)
+    protected bool IsTargetCloserThen(float targetDistance)
     {
         if (agent.remainingDistance <= targetDistance)
         {
@@ -88,7 +88,7 @@ public class PathfindingAgent : MonoBehaviour
     private void PathfindingTimer()
     {
         pathfindingTime += Time.deltaTime;
-        if (pathfindingTime >= pathfindingMaxTime && GroundCheck())
+        if (pathfindingTime >= pathfindingMaxTime && GroundCheck() == true)
         {
             agent.updatePosition = true;
         }
