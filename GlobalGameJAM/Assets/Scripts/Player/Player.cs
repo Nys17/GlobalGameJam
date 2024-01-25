@@ -8,13 +8,14 @@ public class Player : MonoBehaviour
     private EventInstance footsteps;
 
     public CharacterController controller;
-    public float speed = 12f;
     [SerializeField] Vector3 velocity;
-    public float gravity = -9.81f;
 
     public Transform groundCheck;
+    public float speed = 12f;
+    public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight = 10f;
+    public int PlayerHealth = 100;
     
     
     public LayerMask groundMask;
@@ -47,7 +48,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
+        if (PlayerHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
         Vector2 NewMove = playerControls.Gameplay.Move.ReadValue<Vector2>();
        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -88,6 +93,20 @@ public class Player : MonoBehaviour
         else
         {
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy bullet"))
+        {
+           PlayerHealth = PlayerHealth - 20;
+        }
+
+        if (other.gameObject.CompareTag("Health"))
+        {
+            PlayerHealth = PlayerHealth + 20;
+            Destroy(other.gameObject);
         }
     }
 }
