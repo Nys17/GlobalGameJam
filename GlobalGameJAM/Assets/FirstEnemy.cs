@@ -15,7 +15,7 @@ public class FirstEnemy : MonoBehaviour
 
         attackCoolDown = 5f;
         rangefinderAgent = this.GetComponent<RangefinderAgent>();
-        rangefinderAgent.targetDistance = 5f;
+        rangefinderAgent.targetDistance = 1.5f;
         damage = 20;
     }
 
