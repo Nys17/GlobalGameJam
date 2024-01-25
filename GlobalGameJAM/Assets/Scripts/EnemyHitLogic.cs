@@ -37,10 +37,10 @@ public class EnemyHitLogic : MonoBehaviour
     {
         if (EnemyHealth <= 0) 
         {
-            GameObject Health = Instantiate(healthBall);
-            Health.transform.position = gameObject.transform.position;
+          //  GameObject Health = Instantiate(healthBall);
+          //  Health.transform.position = gameObject.transform.position;
             //Destroy(gameObject);
-            waveSpawner.DestroyEnemy(gameObject);
+            waveSpawner.DestroyEnemy(this.gameObject);
         }
     }
     private void OnCollisionEnter(Collision other)
@@ -50,7 +50,8 @@ public class EnemyHitLogic : MonoBehaviour
             Agent.OnHit();
             This.AddForce(other.transform.forward * speed);
             This.AddForce(transform.up * UpSpeed);
-            EnemyHealth = 0;
+            Destroy(other.gameObject);
+            EnemyHealth -= 20;
         }
     }
 }
