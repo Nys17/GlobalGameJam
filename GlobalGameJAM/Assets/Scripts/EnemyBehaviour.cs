@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        firePoint = GameObject.FindGameObjectWithTag("Player");
         player = GameObject.FindGameObjectWithTag("Player");
         canFire = true;
     }

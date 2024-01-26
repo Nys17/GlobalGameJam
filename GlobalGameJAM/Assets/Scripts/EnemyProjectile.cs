@@ -11,6 +11,7 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BulletRig = GetComponent<Rigidbody>();
         BulletRig.AddForce(transform.forward * speed);
     }
 
