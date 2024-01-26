@@ -5,7 +5,7 @@ using UnityEngine;
 public class FirstEnemy : MonoBehaviour
 {
    public WaveSpawner waveSpawner;
-    public float damage;
+    public int damage;
     RangefinderAgent rangefinderAgent;
     float attackCoolDown;
     bool canAttack;
@@ -60,7 +60,7 @@ public class FirstEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-          //  other.gameObject.GetComponent<Player>.health = other.gameObject.GetComponent<Player>.health - damage;
+            other.gameObject.GetComponent<Player>().PlayerHealth = other.gameObject.GetComponent<Player>().PlayerHealth - damage;
         }
     }
 }

@@ -2,9 +2,10 @@ using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    
     private EventInstance footsteps;
 
     public CharacterController controller;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         if (PlayerHealth <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(0); //main menu 
         }
         Vector2 NewMove = playerControls.Gameplay.Move.ReadValue<Vector2>();
        

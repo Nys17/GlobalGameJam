@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166514659704898047}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.003184672, y: -0.70040834, z: 0.0031252378, w: 0.7137284}
+  m_LocalRotation: {x: 0.0032573224, y: -0.70040804, z: 0.0031965326, w: 0.7137281}
   m_LocalPosition: {x: 0, y: 1.3120003, z: 3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -100,7 +100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3a98d0703627834d94e99cabc71598c, type: 2}
+  - {fileID: 2100000, guid: 2737fc0054107f242874784d127478d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveSpawner: {fileID: 0}
-  damage: 0
+  damage: 20
 --- !u!114 &2692873630655968787
 MonoBehaviour:
   m_ObjectHideFlags: 0
