@@ -56,14 +56,19 @@ public class AudioManager : MonoBehaviour
 
     private void deinitaliseSound()
     {
-        musicEventInstance.stop();
+        musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     #endregion
 
-    #region destructor
+    #region Destructor
 
     private void OnDestroy()
+    {
+        deinitaliseSound();
+    }
+
+    private void OnDisable()
     {
         deinitaliseSound();
     }
