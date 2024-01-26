@@ -2172,6 +2172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173035585443100079, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.248
+      objectReference: {fileID: 0}
     - target: {fileID: 1584529779569936762, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2183,6 +2187,10 @@ PrefabInstance:
     - target: {fileID: 4297241171948626957, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
       propertyPath: Sensitivity
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292376028067144439, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+      propertyPath: field of view
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7077860267021256436, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2231,7 +2239,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6532783566847913105, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1277597213}
   m_SourcePrefab: {fileID: 100100000, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
 --- !u!1 &331304962
 GameObject:
@@ -7864,6 +7875,24 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1277597208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6532783566847913105, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+  m_PrefabInstance: {fileID: 318691354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1277597213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277597208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1302997355
 GameObject:
   m_ObjectHideFlags: 0
