@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5283231765255363466}
   - component: {fileID: 4862303781176882102}
   - component: {fileID: 4934457792449688441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoostPad
   m_TagString: Boost
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: deb29f6be8c9d2f4d993732021bc08c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

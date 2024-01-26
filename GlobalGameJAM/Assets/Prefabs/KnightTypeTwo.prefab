@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4407879491467054645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6017440768357917095}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6017440768357917095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4407879491467054645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 13.58, z: 7.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 767136930906168126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5580795906549239089
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,19 +96,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9465981
+      value: -0.14499456
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04990944
+      value: 0.0044485806
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.31808767
+      value: 0.9889571
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.016771188
+      value: 0.030342204
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -113,6 +144,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6994074172477794723}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6017440768357917095}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       insertIndex: -1
@@ -170,7 +204,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1208896773985393684
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -313,7 +347,7 @@ MonoBehaviour:
   enemyCooldown: 3
   player: {fileID: 0}
   enemyWeapon: {fileID: 1955613502469560461, guid: 814658d7e4e2a3d46af97d413b268644, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 4407879491467054645}
 --- !u!4 &767136930906168126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
