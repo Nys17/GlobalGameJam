@@ -54,5 +54,19 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.start();
     }
 
+    private void deinitaliseSound()
+    {
+        musicEventInstance.stop();
+    }
+
+    #endregion
+
+    #region destructor
+
+    private void OnDestroy()
+    {
+        deinitaliseSound();
+    }
+
     #endregion
 }
