@@ -39,8 +39,8 @@ public class EnemyHitLogic : MonoBehaviour
     {
         if (EnemyHealth <= 0) 
         {
-          //  GameObject Health = Instantiate(healthBall);
-          //  Health.transform.position = gameObject.transform.position;
+           GameObject Health = Instantiate(healthBall);
+           Health.transform.position = gameObject.transform.position;
             //Destroy(gameObject);
             waveSpawner.DestroyEnemy(this.gameObject);
         }

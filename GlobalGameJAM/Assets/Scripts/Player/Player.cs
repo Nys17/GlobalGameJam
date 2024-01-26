@@ -56,6 +56,11 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene(0); //main menu 
         }
+
+        if (PlayerHealth >100)
+        {
+            PlayerHealth = 100;
+        }
         Vector2 NewMove = playerControls.Gameplay.Move.ReadValue<Vector2>();
        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -114,6 +119,11 @@ public class Player : MonoBehaviour
             velocity.y = Mathf.Sqrt(boostHeight * -2f * gravity);
             velocity.y += gravity * Time.deltaTime;
         }
+        if (other.gameObject.CompareTag("Health"))
+        {
+            PlayerHealth = PlayerHealth + 20;
+            Destroy(other.gameObject);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -122,11 +132,7 @@ public class Player : MonoBehaviour
            PlayerHealth = PlayerHealth - 20;
         }
 
-        if (other.gameObject.CompareTag("Health"))
-        {
-            PlayerHealth = PlayerHealth + 20;
-            Destroy(other.gameObject);
-        }
+       
         
     }
 }
