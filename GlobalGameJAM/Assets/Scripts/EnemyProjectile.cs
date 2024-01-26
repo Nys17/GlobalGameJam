@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    float lifespan = 10f;
+    float lifespan = 5f;
     public float speed = 10000f;
     public Rigidbody BulletRig;
     public GameObject Player;
