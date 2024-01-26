@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimpleProjectile : MonoBehaviour
 {
     public Rigidbody BulletRig;
-    float lifespan = 10f;
+    float lifespan = 5f;
     public float speed = 10000f;
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,17 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+        if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyTwo") || other.gameObject.CompareTag("EnemyThree")))
+        {
+            BulletRig.AddForce(transform.forward * speed);
+        }
+        
+        
+        
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyTwo")|| other.gameObject.CompareTag("EnemyThree"))
         {
             Destroy(gameObject);
         }
+        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
     }
 }

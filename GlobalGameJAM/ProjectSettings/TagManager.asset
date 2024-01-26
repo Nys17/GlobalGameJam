@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - EnemyTwo
   - EnemyThree
+  - Health
+  - Health Ball
+  - Boost
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

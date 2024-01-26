@@ -2,19 +2,22 @@ using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    
     private EventInstance footsteps;
 
     public CharacterController controller;
-    public float speed = 12f;
     [SerializeField] Vector3 velocity;
-    public float gravity = -9.81f;
 
     public Transform groundCheck;
+    public float speed = 12f;
+    public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight = 10f;
+    public float boostHeight = 20f;
+    public int PlayerHealth = 100;
     
     
     public LayerMask groundMask;
@@ -47,7 +50,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (PlayerHealth <= 0)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene(0); //main menu 
+        }
 
+        if (PlayerHealth >100)
+        {
+            PlayerHealth = 100;
+        }
         Vector2 NewMove = playerControls.Gameplay.Move.ReadValue<Vector2>();
        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -69,6 +82,14 @@ public class Player : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
 
+        if (Input.GetKey(KeyCode.LeftShift)== true)
+        {
+            speed = 20f;
+        }
+        if (Input.GetKey(KeyCode.LeftShift) == false)
+        {
+            speed = 12f;
+        }
         controller.Move(velocity * Time.deltaTime);
 
         UpdateSound();
@@ -89,5 +110,29 @@ public class Player : MonoBehaviour
         {
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Boost"))
+        {
+            velocity.y = Mathf.Sqrt(boostHeight * -2f * gravity);
+            velocity.y += gravity * Time.deltaTime;
+        }
+        if (other.gameObject.CompareTag("Health"))
+        {
+            PlayerHealth = PlayerHealth + 20;
+            Destroy(other.gameObject);
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+           PlayerHealth = PlayerHealth - 20;
+        }
+
+       
+        
     }
 }
