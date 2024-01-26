@@ -10,11 +10,12 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject enemyWeapon;
     public GameObject firePoint;
     bool canFire;
-
+    Animator animator;
     
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         firePoint = GameObject.FindGameObjectWithTag("Player");
         player = GameObject.FindGameObjectWithTag("Player");
         canFire = true;
@@ -32,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Fire();
             canFire = false;
-
+            animator.SetBool("IsAttacking", false);
         }
         if (canFire == false)
         {
@@ -46,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Fire()
     {
+        animator.SetBool("IsAttacking", true);
         GameObject Projectile = Instantiate(enemyWeapon);
         Projectile.transform.position = firePoint.transform.position;
         Projectile.transform.rotation = firePoint.transform.rotation;

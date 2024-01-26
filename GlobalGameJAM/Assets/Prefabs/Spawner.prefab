@@ -102,13 +102,13 @@ MonoBehaviour:
   EnemyTypeTwo: []
   EnemyTypeThree: []
   Enemy: {fileID: 139253516992414084, guid: 3a5d20f76629fc7488bc54788f26a5ad, type: 3}
-  EnemyTwo: {fileID: 7166514659704898047, guid: 1a6f4a0cd87c64f429cbf860a3d70157, type: 3}
-  EnemyThree: {fileID: 7166514659704898047, guid: 563cbeacab09b544ea821f96ab3cdf04, type: 3}
+  EnemyTwo: {fileID: 139253516992414084, guid: 758238f3c89e99446a14d6e012dabbfa, type: 3}
+  EnemyThree: {fileID: 139253516992414084, guid: 3def59df5d3e2404d86055101b815a46, type: 3}
   NumberOfEnemiesOne: 10
-  NumberOfEnemiesTwo: 10
-  NumberOfEnemiesThree: 0
-  EnemyOneMultiplier: 0
-  EnemyTwoMultiplier: 0
-  EnemyThreeMultiplier: 0
-  MaxRounds: 4
+  NumberOfEnemiesTwo: 8
+  NumberOfEnemiesThree: 5
+  EnemyOneMultiplier: 2
+  EnemyTwoMultiplier: 2
+  EnemyThreeMultiplier: 2
+  MaxRounds: 6
   ShouldSpawnEnemies: 0
