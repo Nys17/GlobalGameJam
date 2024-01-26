@@ -13,6 +13,7 @@ public class EnemyHitLogic : MonoBehaviour
     public GameObject healthBall;
     int speed;
     int UpSpeed;
+    Animator animator;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class EnemyHitLogic : MonoBehaviour
         speed = 10;
         UpSpeed = 1000;
         This = this.GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,13 @@ public class EnemyHitLogic : MonoBehaviour
             This.AddForce(transform.up * UpSpeed);
             Destroy(other.gameObject);
             EnemyHealth -= 20;
+            animator.SetBool("IsHit", true);
+            Invoke("StopAnimation", 2f);
         }
+    }
+
+    void StopAnimation()
+    {
+        animator.SetBool("IsHit", false);
     }
 }

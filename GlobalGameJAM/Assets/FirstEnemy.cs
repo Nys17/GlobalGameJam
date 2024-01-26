@@ -9,10 +9,11 @@ public class FirstEnemy : MonoBehaviour
     RangefinderAgent rangefinderAgent;
     float attackCoolDown;
     bool canAttack;
+    Animator animator;
     void Start()
     {
         waveSpawner = GetComponentInParent<WaveSpawner>();
-
+        animator= GetComponent<Animator>();
         attackCoolDown = 5f;
         rangefinderAgent = this.GetComponent<RangefinderAgent>();
         rangefinderAgent.targetDistance = 1.5f;
@@ -52,8 +53,10 @@ public class FirstEnemy : MonoBehaviour
 
     void ChargedAttack()
     {
+        animator.SetBool("IsAttacking", true);
         this.GetComponent<Rigidbody>().AddForce(this.transform.forward * 20);
         canAttack = false;
+        animator.SetBool("IsAttacking", false);
     }
 
     private void OnTriggerEnter(Collider other)
