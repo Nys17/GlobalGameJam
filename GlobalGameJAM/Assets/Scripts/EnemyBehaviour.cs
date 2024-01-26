@@ -11,14 +11,17 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject firePoint;
     bool canFire;
     Animator animator;
+    RangefinderAgent Range;
     
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        firePoint = GameObject.FindGameObjectWithTag("Player");
+        
         player = GameObject.FindGameObjectWithTag("Player");
         canFire = true;
+        Range = GetComponent<RangefinderAgent>();
+        Range.targetDistance = 5f;
     }
 
     // Update is called once per frame

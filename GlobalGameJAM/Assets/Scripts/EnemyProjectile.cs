@@ -7,12 +7,14 @@ public class EnemyProjectile : MonoBehaviour
     float lifespan = 10f;
     public float speed = 10000f;
     public Rigidbody BulletRig;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
         BulletRig = GetComponent<Rigidbody>();
-        BulletRig.AddForce(transform.forward * speed);
+        BulletRig.AddForce(transform.forward * speed * Player.gameObject.transform.position.y);
+        
     }
 
     // Update is called once per frame
