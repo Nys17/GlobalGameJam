@@ -126,26 +126,37 @@ public class WaveSpawner : MonoBehaviour
             {
                 SpawnEnemies(i, EnemyTypeThree);
             }
+             ShouldSpawnEnemies = false;
         }
     }
 
     void InfinityWave()
     {
+
+
         if (ShouldSpawnEnemies == true)
         {
             for (int i = 0; i < EnemyTypeOne.Count; i++)
             {
-                for (int j = 0; j< EnemyTypeTwo.Count; j++)
-                {
-                    for (int k = 0; k < EnemyTypeThree.Count; k++)
-                    {
-                        SpawnEnemies(i, EnemyTypeOne);
-                        SpawnEnemies(j, EnemyTypeTwo);
-                        SpawnEnemies(k, EnemyTypeThree);
-                    }
-                }
+                SpawnEnemies(i, EnemyTypeOne);
             }
+            for (int j = 0; j < EnemyTypeTwo.Count; j++)
+            {
+                SpawnEnemies(j, EnemyTypeTwo);
+            }
+            for (int k = 0; k < EnemyTypeThree.Count; k++)
+            {
+
+
+                SpawnEnemies(k, EnemyTypeThree);
+
+            }
+            ShouldSpawnEnemies = false;
         }
+       
+       
+        
+        
     }
     protected void SpawnEnemies(int i, List <GameObject> ListOfEnemies)
     {

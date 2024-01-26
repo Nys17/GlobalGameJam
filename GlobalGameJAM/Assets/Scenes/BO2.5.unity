@@ -45314,8 +45314,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2539082211117416608, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
+      propertyPath: EnemyOneMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539082211117416608, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
+      propertyPath: EnemyTwoMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539082211117416608, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
       propertyPath: NumberOfEnemiesOne
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539082211117416608, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
+      propertyPath: NumberOfEnemiesTwo
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539082211117416608, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
+      propertyPath: EnemyThreeMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6116763577357990158, guid: e09cc5f7da131334d8bcdbca430cf9ef, type: 3}
       propertyPath: m_Name
