@@ -2224,6 +2224,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7251055827798085347, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 369682792}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2553,6 +2557,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 620068103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &369682792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7077860267021256436, guid: 40b87b619b9e78141ab4ae2f08e93527, type: 3}
+  m_PrefabInstance: {fileID: 318691354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &370154194
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5394,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!1 &796948399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796948402}
+  - component: {fileID: 796948401}
+  - component: {fileID: 796948400}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796948400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796948399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4038d1b571109e47b3ae263f949dc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <music>k__BackingField:
+    Guid:
+      Data1: -653056555
+      Data2: 1294291903
+      Data3: -2146422106
+      Data4: 1086318949
+    Path: event:/Soundtrack
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: -331873360
+      Data2: 1095438776
+      Data3: -819559284
+      Data4: -217731312
+    Path: event:/Footsteps
+  <metalPipe>k__BackingField:
+    Guid:
+      Data1: 1720138381
+      Data2: 1334637744
+      Data3: 1790301351
+      Data4: 784603085
+    Path: event:/MetalPipe
+--- !u!114 &796948401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796948399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78e8d69651d52b44a1e52b1a479d994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &796948402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796948399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.522059, y: 9.89563, z: -8.709093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832641288
 GameObject:
   m_ObjectHideFlags: 0
@@ -13751,3 +13838,4 @@ SceneRoots:
   - {fileID: 746595277}
   - {fileID: 550895039}
   - {fileID: 5050474}
+  - {fileID: 796948402}

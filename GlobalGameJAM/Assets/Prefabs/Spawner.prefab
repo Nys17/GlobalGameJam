@@ -105,7 +105,7 @@ MonoBehaviour:
   EnemyTwo: {fileID: 7166514659704898047, guid: 1a6f4a0cd87c64f429cbf860a3d70157, type: 3}
   EnemyThree: {fileID: 7166514659704898047, guid: 563cbeacab09b544ea821f96ab3cdf04, type: 3}
   NumberOfEnemiesOne: 10
-  NumberOfEnemiesTwo: 0
+  NumberOfEnemiesTwo: 10
   NumberOfEnemiesThree: 0
   EnemyOneMultiplier: 0
   EnemyTwoMultiplier: 0

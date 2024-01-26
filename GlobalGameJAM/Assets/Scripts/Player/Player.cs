@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemy bullet"))
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
            PlayerHealth = PlayerHealth - 20;
         }

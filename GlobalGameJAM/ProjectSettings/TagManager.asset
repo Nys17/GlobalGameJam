@@ -11,6 +11,7 @@ TagManager:
   - Health
   - Health Ball
   - Boost
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
