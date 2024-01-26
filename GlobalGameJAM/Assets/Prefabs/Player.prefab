@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5755823734022147066}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,15 +124,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5755823734022147066}
+  velocity: {x: 0, y: 0, z: 0}
+  groundCheck: {fileID: 1591814950196081312}
   speed: 12
   gravity: -9.81
-  groundCheck: {fileID: 1591814950196081312}
   groundDistance: 0.4
   jumpHeight: 10
+  boostHeight: 20
+  PlayerHealth: 100
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   playerBody: {fileID: 0}
+  isGrounded: 0
 --- !u!143 &5755823734022147066
 CharacterController:
   m_ObjectHideFlags: 0

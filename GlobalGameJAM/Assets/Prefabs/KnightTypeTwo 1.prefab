@@ -231,7 +231,7 @@ MonoBehaviour:
   waveSpawner: {fileID: 0}
   EnemyHealth: 0
   This: {fileID: 0}
-  healthBall: {fileID: 0}
+  healthBall: {fileID: 4517001109115618947, guid: 7aa60db34ce4d484daaad81d90858b09, type: 3}
 --- !u!95 &985659927951400849
 Animator:
   serializedVersion: 5
