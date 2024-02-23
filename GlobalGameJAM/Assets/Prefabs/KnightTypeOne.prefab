@@ -65,19 +65,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.91715866
+      value: 0.49265143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.20704222
+      value: -0.018288538
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.33216122
+      value: 0.8694357
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0749831
+      value: 0.03227578
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -310,7 +310,7 @@ MonoBehaviour:
     m_Bits: 64
   pathfindingMaxTime: 1
   pathfindingTime: 0
-  targetDistance: 0
+  targetDistance: 4
 --- !u!4 &767136930906168126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 593d7ce98d45f5241a4599724e5293ad, type: 3}

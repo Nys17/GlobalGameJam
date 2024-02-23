@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FirstEnemy : MonoBehaviour
 {
@@ -23,11 +24,13 @@ public class FirstEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rangefinderAgent.MeasureDistanceToTarget()) { 
-        
+                if (rangefinderAgent.MeasureDistanceToTarget()) { 
+
             if (canAttack)
             {
+              
                 ChargedAttack();
+
             }
 
             attackCoolDown = attackCoolDown - (1f * Time.deltaTime); /// timer
@@ -51,6 +54,19 @@ public class FirstEnemy : MonoBehaviour
     //    }
     //}
 
+    void DisableEnableNavMeshAgent()
+    {
+        if (GetComponent<NavMeshAgent>().enabled == true && GetComponent<RangefinderAgent>().enabled == true)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<RangefinderAgent>().enabled = false;
+        }
+        else
+        {
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<RangefinderAgent>().enabled = true;
+        }
+    }
     void ChargedAttack()
     {
         animator.SetBool("IsAttacking", true);

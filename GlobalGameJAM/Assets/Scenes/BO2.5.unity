@@ -45259,24 +45259,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <music>k__BackingField:
     Guid:
-      Data1: -653056555
-      Data2: 1294291903
-      Data3: -2146422106
-      Data4: 1086318949
+      Data1: -1218132739
+      Data2: 1252703185
+      Data3: -2128315997
+      Data4: 388436455
     Path: event:/Soundtrack
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: -331873360
-      Data2: 1095438776
-      Data3: -819559284
-      Data4: -217731312
+      Data1: -1251016020
+      Data2: 1240926488
+      Data3: -135856205
+      Data4: -596594444
     Path: event:/Footsteps
   <metalPipe>k__BackingField:
     Guid:
-      Data1: 1720138381
-      Data2: 1334637744
-      Data3: 1790301351
-      Data4: 784603085
+      Data1: 1877513502
+      Data2: 1140692913
+      Data3: 1349595303
+      Data4: -392825425
     Path: event:/MetalPipe
 --- !u!114 &1301123669
 MonoBehaviour:
@@ -45290,6 +45290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78e8d69651d52b44a1e52b1a479d994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicBusVolume: 0
+  sfxBusVolume: 0
+  metalPipeBusVolume: 0
 --- !u!4 &1301123670
 Transform:
   m_ObjectHideFlags: 0

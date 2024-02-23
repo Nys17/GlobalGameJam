@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,8 @@ public class SimpleProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+      AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
+
+        
     }
 }

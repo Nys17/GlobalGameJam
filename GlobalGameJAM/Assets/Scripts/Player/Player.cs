@@ -53,8 +53,8 @@ public class Player : MonoBehaviour
         
         if (PlayerHealth <= 0)
         {
-           // Destroy(gameObject);
-            //SceneManager.LoadScene(0); //main menu 
+            Destroy(gameObject);
+            SceneManager.LoadScene(0); //main menu 
         }
 
         if (PlayerHealth >100)
