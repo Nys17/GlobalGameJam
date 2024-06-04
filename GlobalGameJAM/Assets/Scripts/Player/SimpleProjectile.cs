@@ -44,8 +44,18 @@ public class SimpleProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-      AudioManager.instance.PlayOneshotSound(FMODEvents.instance.metalPipe, other.gameObject.transform.position);
 
+        if (!IsPlaying(AudioManager.instance.pipeEventInstance)){
+            AudioManager.instance.pipeEventInstance = AudioManager.instance.CreateInstance(FMODEvents.instance.metalPipe);
+            AudioManager.instance.pipeEventInstance.start();
+            AudioManager.instance.pipeEventInstance.release();
+        }
         
+    }
+
+    private bool IsPlaying(FMOD.Studio.EventInstance instance) {
+    	FMOD.Studio.PLAYBACK_STATE state;   
+	    instance.getPlaybackState(out state);
+	    return state != FMOD.Studio.PLAYBACK_STATE.STOPPED;
     }
 }
