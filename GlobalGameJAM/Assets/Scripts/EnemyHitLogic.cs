@@ -32,6 +32,7 @@ public class EnemyHitLogic : MonoBehaviour
         UpSpeed = 1000;
         This = this.GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        AddScore(this.GetComponentInParent<Score>().PointAmount);
     }
 
     // Update is called once per frame
@@ -62,5 +63,10 @@ public class EnemyHitLogic : MonoBehaviour
     void StopAnimation()
     {
         animator.SetBool("IsHit", false);
+    }
+
+    void AddScore(int score)
+    {
+        PlayerPrefs.SetInt("CurrentScore", PlayerPrefs.GetInt("CurrentScore") + score);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     
+
     private EventInstance footsteps;
 
     public CharacterController controller;
@@ -29,6 +30,9 @@ public class Player : MonoBehaviour
 
     private PlayerControls playerControls;
 
+
+    
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -44,6 +48,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
+        }
+       
         footsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
     }
 
@@ -55,6 +64,13 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             SceneManager.LoadScene(0); //main menu 
+
+
+            if (PlayerPrefs.GetInt("HighScore") < PlayerPrefs.GetInt("CurrentScore"))
+            {
+                PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("CurrentScore"));
+            }
+           
         }
 
         if (PlayerHealth >100)
@@ -135,4 +151,6 @@ public class Player : MonoBehaviour
        
         
     }
+
+  
 }
