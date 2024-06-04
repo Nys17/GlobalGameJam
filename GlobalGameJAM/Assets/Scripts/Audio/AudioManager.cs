@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     #region Variables
 
     private EventInstance musicEventInstance;
+    public EventInstance pipeEventInstance;
 
 
     FMOD.Studio.Bus musicBus;
