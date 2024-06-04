@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", 0);
         }
-       
+        PlayerPrefs.SetInt("CurrentScore", 0);
         footsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
     }
 
