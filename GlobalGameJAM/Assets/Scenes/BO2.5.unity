@@ -22326,7 +22326,7 @@ GameObject:
   - component: {fileID: 741060681}
   m_Layer: 0
   m_Name: gm
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22344,6 +22344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 1075978061}
+  currentScore: 0
 --- !u!4 &741060682
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class EnemyHitLogic : MonoBehaviour
     int speed;
     int UpSpeed;
     Animator animator;
+    GM gm;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class EnemyHitLogic : MonoBehaviour
         {
             Debug.Log("No agent");
         }
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GM>();
     }
 
     // Start is called before the first frame update
@@ -32,7 +34,8 @@ public class EnemyHitLogic : MonoBehaviour
         UpSpeed = 1000;
         This = this.GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        AddScore(this.GetComponentInParent<Score>().PointAmount);
+      
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GM>();
     }
 
     // Update is called once per frame
@@ -57,6 +60,7 @@ public class EnemyHitLogic : MonoBehaviour
             EnemyHealth -= 20;
             animator.SetBool("IsHit", true);
             Invoke("StopAnimation", 2f);
+            AddScore(this.GetComponentInParent<Score>().PointAmount);
         }
     }
 
@@ -67,6 +71,6 @@ public class EnemyHitLogic : MonoBehaviour
 
     void AddScore(int score)
     {
-        PlayerPrefs.SetInt("CurrentScore", PlayerPrefs.GetInt("CurrentScore") + score);
+        gm.currentScore += score;
     }
 }

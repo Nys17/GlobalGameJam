@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     public float jumpHeight = 10f;
     public float boostHeight = 20f;
     public int PlayerHealth = 100;
-    
+
+    GM gm;
     
     public LayerMask groundMask;
 
@@ -48,7 +49,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-      
+
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GM>();
         footsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
     }
 
@@ -62,9 +64,10 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(0); //main menu 
 
 
-            if (PlayerPrefs.GetInt("HighScore") < PlayerPrefs.GetInt("CurrentScore"))
+            if (PlayerPrefs.GetInt("HighScore") < gm.currentScore)
             {
-                PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("CurrentScore"));
+                PlayerPrefs.SetInt("HighScore", gm.currentScore);
+                PlayerPrefs.Save();
             }
            
         }

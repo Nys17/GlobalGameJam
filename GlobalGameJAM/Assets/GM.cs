@@ -7,17 +7,21 @@ public class GM : MonoBehaviour
 {
     public TextMeshProUGUI t;
 
+    public int currentScore;
+
     private void Start()
     {
 
         if (!PlayerPrefs.HasKey("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore", 0);
+            PlayerPrefs.Save();
+            
         }
-        PlayerPrefs.SetInt("CurrentScore", 0);
+        currentScore = 0;
     }
     void Update()
     {
-        t.text = "Score: " + PlayerPrefs.GetInt("CurrentScore");
+        t.text = "Score: " + currentScore;
     }
 }
